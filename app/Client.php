@@ -25,10 +25,14 @@ class Client extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'phone'];
+    protected $fillable = ['name', 'phone', 'attendances'];
 
     public function phones() {
         return $this->hasMany('App\Phone');
+    }
+
+    public function attendances() {
+        return $this->hasMany('App\Attendance');
     }
 
 }

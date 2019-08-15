@@ -17,7 +17,7 @@ class ClientsController extends Controller
      */
     public function index(Request $request)
     {
-        $clients = Client::latest()->with('phones')->paginate(25);
+        $clients = Client::latest()->with('phones', 'attendances')->paginate(25);
 
         return $clients;
     }
