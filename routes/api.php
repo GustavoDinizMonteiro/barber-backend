@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('clients', 'ClientsController', ['except' => ['create', 'edit']]);
 Route::resource('phones', 'PhonesController', ['except' => ['create', 'edit']]);
+Route::resource('attendance', 'AttendanceController', ['except' => ['create', 'edit']]);
