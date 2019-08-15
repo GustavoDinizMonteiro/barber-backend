@@ -25,7 +25,10 @@ class Phone extends Model
      *
      * @var array
      */
-    protected $fillable = ['number'];
+    protected $fillable = ['number', 'client_id'];
 
+    public function user() {
+        return $this->belongsTo('App\Client');
+    }
     
 }

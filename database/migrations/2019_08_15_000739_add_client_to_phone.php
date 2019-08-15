@@ -13,8 +13,11 @@ class AddClientToPhone extends Migration
      */
     public function up()
     {
-        Schema::table('phone', function (Blueprint $table) {
-            //
+        Schema::table('phones', function (Blueprint $table) {
+            $table->integer('client_id');
+            $table->foreign('client_id')
+                ->references('id')->on('clients')
+                ->onDelete('cascade');
         });
     }
 
@@ -25,10 +28,8 @@ class AddClientToPhone extends Migration
      */
     public function down()
     {
-        Schema::table('phone', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')->on('clients')
-                ->onDelete('cascade');
+        Schema::table('phones', function (Blueprint $table) {
+
         });
     }
 }
